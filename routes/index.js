@@ -11,14 +11,10 @@ router.get('/', function(req, res, next) {
 	converter.on("end_parsed", function (jsonArray) {
 	    console.log(jsonArray); //here is your result jsonarray
 	    var jsonString = JSON.stringify(jsonArray);
-	    //console.log(jsonString);
 	    var xmltosend = js2xmlparser("CUBXML", jsonString);
     	console.log(xmltosend);
     	res.set('Content-Type', 'text/text');
-    	//res.send(xml(xmltosend));
-    	// res.send("xml generated successfully!");
-    	var testXML = "<?xml version=1.0 encoding=UTF-8?><note><from>Jani</from><to>Tove</to><message>Remember me this weekend</message></note>"
-		res.send(testXML);
+    	res.send(xml(xmltosend));
 	});
 
 	//read from file
