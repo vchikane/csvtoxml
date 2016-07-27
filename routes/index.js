@@ -60,7 +60,7 @@ router.post('/branch', function(req, res, next) {
 	    b=[]
 	    obj={xml:[]}
 	    b[0]=obj
-	    id = req.body._id;
+	    id = req.body.CUBXML.ODS_Query.BranchCode;
 	    async.eachSeries(data, function (line, callback) {
 		    // line is the file's row, play with line now
 		    if(counter==0) {
